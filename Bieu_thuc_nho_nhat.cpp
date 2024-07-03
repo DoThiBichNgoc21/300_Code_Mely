@@ -12,11 +12,11 @@ int main(){
         for ( int i = 0; i < n; i++ ){
             cin >> a[i];
         }
-        int sum = 0;
+        long long sum = 0;
         for ( int i = 0; i < n; i++ ){
             sum += a[i];
         }
-        int x = sum / n;
+        long long x = sum / n;
         if ( x*n != sum ){
             if ( abs( x*n - sum ) > abs( (x+1)*n - sum )){
                 x++;
