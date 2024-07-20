@@ -3,19 +3,20 @@
 using namespace std;
 
 int main(){
-    int n, k;
+    long long n, k;
     cin >> n >> k;
-    vector<long long> a(n);
+    long long a[n + 5];
     for ( int i = 0; i < n; i++){
         cin >> a[i];
     }
-    set<int> du;
-    for ( int i = 0; i < n; i++ ){
-       int res = a[i] % k;
-       if ( res != 0 ){
-        du.insert(res);
-       }
+    for (int i = 0; i < n; i++){
+        a[i] = a[i] % k;
     }
-    cout << du.size();
+    sort (a, a + n);
+    int cnt = 1;
+    for (int i = 1; i < n; i++){
+        if (a[i] != a[i - 1]) cnt++;
+    }
+    cout << cnt;
     return 0;
 }
